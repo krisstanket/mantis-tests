@@ -21,9 +21,12 @@ namespace mantis_tests
         private ApplicationManager()
         {
             driver = new ChromeDriver(@"C:\Users\MI\Downloads");
-            baseURL = "http://localhost/addressbook/";
+            baseURL = "http://localhost/mantisbt-2.23.0/";
             Registration = new RegistrationHelper(this);
             Ftp = new FtpHelper(this);
+            Login = new LoginHelper(this);
+            ManageMenu = new ManagementMenuHelper(this);
+            Project = new ProjectManagementHelper(this);
         }
 
         ~ApplicationManager()
@@ -41,6 +44,12 @@ namespace mantis_tests
         public RegistrationHelper Registration { get; set; }
 
         public FtpHelper Ftp { get; set; }
+
+        public LoginHelper Login { get; set; }
+
+        public ManagementMenuHelper ManageMenu { get; set; }
+
+        public ProjectManagementHelper Project { get; set; }
         public static ApplicationManager GetInstance()
         {
             if ( ! appManager.IsValueCreated)

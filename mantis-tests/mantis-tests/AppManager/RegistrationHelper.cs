@@ -17,8 +17,6 @@ namespace mantis_tests
             OpenRegistrationForm();
             FillRegistrationForm(account);
             SubmitRegistration();
-
-
         }
 
         private void OpenRegistrationForm()
