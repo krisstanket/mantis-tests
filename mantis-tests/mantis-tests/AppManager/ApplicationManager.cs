@@ -21,11 +21,12 @@ namespace mantis_tests
         private ApplicationManager()
         {
             driver = new ChromeDriver(@"C:\Users\MI\Downloads");
-            baseURL = "http://localhost/mantisbt-2.23.0/";
+            baseURL = "http://localhost/mantisbt-2.23.0";
             Registration = new RegistrationHelper(this);
             Ftp = new FtpHelper(this);
             James = new JamesHelper(this);
             Mail = new MailHelper(this);
+            Admin = new AdminHelper(this, baseURL);
             Login = new LoginHelper(this);
             ManageMenu = new ManagementMenuHelper(this);
             Project = new ProjectManagementHelper(this);
@@ -50,6 +51,8 @@ namespace mantis_tests
         public JamesHelper James { get; set; }
 
         public MailHelper Mail { get; set; }
+
+        public AdminHelper Admin { get; set; }
 
         public LoginHelper Login { get; set; }
 
