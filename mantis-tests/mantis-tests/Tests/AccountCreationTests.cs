@@ -34,6 +34,9 @@ namespace mantis_tests
                 Password = "password",
                 Email = "testuser@localhost.localdomain"
             };
+
+            appManager.James.Delete(account);
+            appManager.James.Add(account);
             appManager.Registration.Register(account);
 
         }

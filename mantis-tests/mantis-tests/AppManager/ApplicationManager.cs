@@ -24,6 +24,8 @@ namespace mantis_tests
             baseURL = "http://localhost/mantisbt-2.23.0/";
             Registration = new RegistrationHelper(this);
             Ftp = new FtpHelper(this);
+            James = new JamesHelper(this);
+            Mail = new MailHelper(this);
             Login = new LoginHelper(this);
             ManageMenu = new ManagementMenuHelper(this);
             Project = new ProjectManagementHelper(this);
@@ -44,6 +46,10 @@ namespace mantis_tests
         public RegistrationHelper Registration { get; set; }
 
         public FtpHelper Ftp { get; set; }
+
+        public JamesHelper James { get; set; }
+
+        public MailHelper Mail { get; set; }
 
         public LoginHelper Login { get; set; }
 
