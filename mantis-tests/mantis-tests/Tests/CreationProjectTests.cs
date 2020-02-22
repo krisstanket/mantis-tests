@@ -15,12 +15,13 @@ namespace mantis_tests
         {
             appManager.ManageMenu.OpenManagePage();
             appManager.ManageMenu.OpenManageProjectsPage();
+            AccountData account = new AccountData() { Name = "administrator", Password = "password"};
 
-            List<ProjectData> oldList = appManager.Project.GetProjectsList();
-            var newProject = new ProjectData() { Name = "testProject"};
+            List<ProjectData> oldList = appManager.API.GetProjectsList(account);
+            var newProject = new ProjectData() { Name = "testNewProject"};
 
             appManager.Project.CreateProject(newProject);
-            List<ProjectData> newList = appManager.Project.GetProjectsList();
+            List<ProjectData> newList = appManager.API.GetProjectsList(account);
 
             oldList.Add(newProject);
             oldList.Sort();
